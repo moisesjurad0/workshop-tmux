@@ -6,7 +6,26 @@ steps:
 
 1. init git repo for documentation.
 1. add `Dockerfile` and `docker-compose.yml` files with alpine only to have a machine to connect.
-1. run `docker-compose up`
+1. run `docker-compose up` or `docker-compose up --build` (this one is to rebuild the images each time you up compose e.g. add/install somenthing in your machine)
+
+- warning: if you rebuild images you're gonna need to update the machine information in file [path_to_user]/.ssh/known_hosts. If you don't this will appear
+
+    ```txt
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the ED25519 key sent by the remote host is
+    SHA256:vQXNMWcomdhWjvDG5mB6udfN7vezkVqI/C/s7JWI/5E.
+    Please contact your system administrator.
+    Add correct host key in /c/Users/moise/.ssh/known_hosts to get rid of this message.
+    Offending ECDSA key in /c/Users/moise/.ssh/known_hosts:7
+    Host key for [localhost]:2222 has changed and you have requested strict checking.
+    Host key verification failed.
+    ```
+
 1. run `ssh user@localhost -p 2222`
 
     ```txt
@@ -14,15 +33,19 @@ steps:
     ED25519 key fingerprint is SHA256:ZmrF8ZVg5H/esEsmJIE9xHsGQkBRmswHUXzTTqp9BBU.
     This key is not known by any other names
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
 
-    #yes
+1. write answer: `yes`
 
+    ```txt
     Warning: Permanently added '[localhost]:2222' (ED25519) to the list of known hosts.
 
-    user@localhost's password: 
-    
-    #user
+    user@localhost's password:
+    ```
 
+1. enter password:  `user`
+
+    ```txt
     Welcome to Alpine!
 
     The Alpine Wiki contains a large amount of how-to guides and general
@@ -33,3 +56,5 @@ steps:
 
     You may change this message by editing /etc/motd.
     ```
+
+1.
