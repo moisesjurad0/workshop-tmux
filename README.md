@@ -2,13 +2,30 @@
 
 this workshop is to practice tmux on a docker machine on a windows host (docker kernerl configured as linux).
 
-steps:
+## 1. Previous Steps
 
 1. init git repo for documentation.
+
+## 2. Initialize docker machine
+
 1. add `Dockerfile` and `docker-compose.yml` files with alpine only to have a machine to connect.
 1. run `docker-compose up` or `docker-compose up --build` (this one is to rebuild the images each time you up compose e.g. add/install somenthing in your machine)
 
-- warning: if you rebuild images you're gonna need to update the machine information in file [path_to_user]/.ssh/known_hosts. If you don't this will appear
+## 3. Connect to container using SSH
+
+this ocassion I'm using git-bash, but we can user putty or openssh.
+You can skip this whole section if you use the integrated terminal on docker for windows.
+
+1. run `ssh user@localhost -p 2222`
+
+    ```txt
+    The authenticity of host '[localhost]:2222 ([::1]:2222)' can't be established.
+    ED25519 key fingerprint is SHA256:ZmrF8ZVg5H/esEsmJIE9xHsGQkBRmswHUXzTTqp9BBU.
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
+
+    - warning: if you rebuild images (`docker-compose up --build`) and after that you connect again to the docker-compose machine you're gonna need to update the machine information in file [path_to_user]/.ssh/known_hosts (you can just delete this file or delete those lines). If you don't this will appear
 
     ```txt
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -24,15 +41,6 @@ steps:
     Offending ECDSA key in /c/Users/moise/.ssh/known_hosts:7
     Host key for [localhost]:2222 has changed and you have requested strict checking.
     Host key verification failed.
-    ```
-
-1. run `ssh user@localhost -p 2222`
-
-    ```txt
-    The authenticity of host '[localhost]:2222 ([::1]:2222)' can't be established.
-    ED25519 key fingerprint is SHA256:ZmrF8ZVg5H/esEsmJIE9xHsGQkBRmswHUXzTTqp9BBU.
-    This key is not known by any other names
-    Are you sure you want to continue connecting (yes/no/[fingerprint])?
     ```
 
 1. write answer: `yes`
@@ -57,4 +65,4 @@ steps:
     You may change this message by editing /etc/motd.
     ```
 
-1.
+## 4. Running Tmux inside the container
