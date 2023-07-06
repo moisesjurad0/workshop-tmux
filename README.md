@@ -66,3 +66,39 @@ You can skip this whole section if you use the integrated terminal on docker for
     ```
 
 ## 4. Running Tmux inside the container
+
+1. run `tmux` to init a session.
+1. run `exit` to close
+
+## 5. cheatsheet
+
+<https://home.brainofshawn.com/uploads/tmux.pdf>
+
+### Commandline Options
+
+- tmux new -A -s session_name ➡ create new session
+- tmux attach -t session_name ➡ attach to session
+- tmux ls ➡ show active sessions
+
+### Control-B Commands (ctrl-b, then:)
+
+- D ➡ Detach Session
+- C ➡ Create Window
+- N ➡ Next Window
+- P ➡ Previous Window
+- 0-9 ➡ Go to Window
+- % ➡ Split Horizontal
+- " ➡ Split Veritical
+- Arrows ➡ Switch Pane
+- O ➡ Next Pane
+- X ➡ Close Pane/Windo
+
+## 6. other Control-B Commands (ctrl-b, then:)
+
+- $ ➡ Rename Session
+- , ➡ Rename Window (Current Window)
+
+## 7. Concepts
+
+- Session ➡ the parent process
+- Window ➡ live as many as you want inside the Session
