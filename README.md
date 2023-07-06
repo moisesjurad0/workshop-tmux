@@ -99,8 +99,16 @@ You can skip this whole section if you use the integrated terminal on docker for
 
 - $ ➡ Rename Session
 - , ➡ Rename Window (Current Window)
+- z ➡ zoom into Panel / zoom out Panel
+- q ➡ highlight Panels numeric ids
+- q then 0-9 ➡ Go to Pane
 
-## 7. Concepts
+## 7. other Control-B Commands (ctrl-b and at the same time:)
+
+- Arrows ➡ Resize Panels
+
+## 8. Concepts
 
 - Session ➡ the parent process
 - Window ➡ live as many as you want inside the Session
+- Panel ➡ multiple division inside a Window
