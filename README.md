@@ -2,7 +2,7 @@
 
 this workshop is to practice tmux on a docker machine on a windows host (docker kernerl configured as linux).
 
-![Tmux Preview Image 01](<https://github.com/moisesJurad0/moisesjurad0/workshop-tmux/raw/main/images/Captura de pantalla 2023-07-05 234909.png>)
+![Tmux Preview Image 01](<https://github.com/moisesjurad0/workshop-tmux/raw/main/images/Captura de pantalla 2023-07-05 234909.png>)
 
 ## 1. Previous Steps
 
